@@ -3,8 +3,6 @@ package com.generic.controller;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.swing.text.AbstractDocument.BranchElement;
-
 import com.generic.controllertest.PseudoModelClasses;
 import com.generic.controllertest.PseudoModelClasses.Shipment;
 import com.generic.controllertest.PseudoModelClasses.Warehouse;
@@ -76,14 +74,11 @@ public class WarehouseController {
 	 * add wasn't successful due to freight receipt being disabled.
 	 * 
 	 */
-	public int addNewShipment(Shipment sModel)
+	public int addShipment(Shipment sModel)
 	{
 		
 		// Get the warehouseID from Shipment
 		long warehouseID = sModel.getWarehouseId();
-		
-		
-		
 		
 		// Flag to track if warehouse has already been created 
 		boolean warehouseExists = false;

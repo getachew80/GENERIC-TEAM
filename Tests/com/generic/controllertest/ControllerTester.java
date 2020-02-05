@@ -38,8 +38,8 @@ public class ControllerTester {
 	void test() {
 		
 		// Add new shipment will return 1 if add is successful
-		assertEquals(1, wController.addNewShipment(shipment1), "Adding shipment1 failed");
-		assertEquals(1, wController.addNewShipment(shipment2), "Adding shipment2 failed");
+		assertEquals(1, wController.addShipment(shipment1), "Adding shipment1 failed");
+		assertEquals(1, wController.addShipment(shipment2), "Adding shipment2 failed");
 		
 		
 		
@@ -52,12 +52,12 @@ public class ControllerTester {
 		
 		// Add new shipment should return false if shipment has ended
 		// freight receipt
-		assertEquals(0, wController.addNewShipment(shipment3),  "Adding shipment to a warehouse with a disabled freight receipt failed");
+		assertEquals(0, wController.addShipment(shipment3),  "Adding shipment to a warehouse with a disabled freight receipt failed");
 	
 		//Freight receipt is enabled again, so add new shipment should return true
 		assertEquals(true, wController.enableFreightReceipt(15566),  "Enabling freight receipt on an existing warehouse failed");
-		assertEquals(1, wController.addNewShipment(shipment3),  "Adding shipment3 failed" );
-		assertEquals(1, wController.addNewShipment(shipment4),  "Adding shipment4 failed" );
+		assertEquals(1, wController.addShipment(shipment3),  "Adding shipment3 failed" );
+		assertEquals(1, wController.addShipment(shipment4),  "Adding shipment4 failed" );
 
 		
 		assertEquals(3, wController.getNumWarehouses());
